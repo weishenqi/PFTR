@@ -8,12 +8,6 @@ simulation data generation, and ADHD-200 preprocessing and analysis functions.
 Plotting code, one-off command-line wrappers, cached runs, and historical
 diagnostic scripts are intentionally excluded.
 
-## Install
-
-```bash
-python -m pip install -e .
-```
-
 ## Code map
 
 - `pftr.dgp`: strict low-Tucker-rank common component, strict sparse deviations,
@@ -62,8 +56,3 @@ subject folders, and local paths.
 The ADHD-200 source page describes unrestricted use for non-commercial research
 but requires users to register for access. For that reason this release directs
 users to the official source instead of redistributing participant-level data.
-
-## Scope
-
-This is research code. It is not a clinical tool, and estimated imaging
-coefficients represent predictive associations rather than causal effects.
