@@ -22,15 +22,15 @@ diagnostic scripts are intentionally excluded.
 
 ## Reproducing the simulation
 
-Read `configs/paper.yaml`, tune the ADMM, federated, and single-client parameter
-grids with the functions in `pftr.tuning_*`, then pass the selected parameter
-dictionaries to `run_sample_size_experiment` or `run_privacy_sensitivity`.
+The simulation module contains the implementations of the proposed personalized federated tensor regression method and the competing methods used in the paper, including the non-private federated estimator, single-client two-stage estimator, and ADMM-based baseline.
 
-The final design generates `A0` and all `B_k` once. Every replication regenerates
-only `X`, `E`, and `Y`, and all methods within a replication use the same data.
-Figure 2 compares non-private federated, private federated, single-client
-two-stage, and ADMM initialization. Figure 3 uses the same `K=5`, heterogeneity
-ratio `0.5`, and fixed-truth design at `n_k=250`.
+The main experimental routines are:
+
+* `run_sample_size_experiment`: evaluates estimation performance under different client sample sizes.
+* `run_privacy_sensitivity`: evaluates the effect of differential privacy on estimation performance.
+
+Within each replication, all methods are evaluated on the same generated data to ensure a fair comparison. The simulation settings correspond to those used for Figure 2 and Figure 3 in the paper.
+
 
 ## Reproducing the ADHD-200 analysis
 
