@@ -1,0 +1,60 @@
+simulation:
+  K: 5
+  sample_sizes: [50, 100, 150, 200, 250]
+  replications: 1000
+  x_shape: [10, 5]
+  y_shape: [5, 5]
+  coefficient_shape: [5, 5, 10, 5]
+  tucker_rank: [3, 3, 3, 3]
+  common_norm: 1.0
+  sparse_support_size: 50
+  deviation_to_common_norm_ratio: 0.5
+  observation_noise_sd: 0.1
+  fixed_truth: true
+  regenerate_per_replication: [X, E, Y]
+  T_g: 20
+  T_l: 30
+  max_iter_admm: 150
+  epsilon: 20.0
+  delta: 0.1
+  clipping_quantile: 0.9
+  eta_A_grid: [0.001, 0.002, 0.005, 0.01, 0.02, 0.05]
+  eta_A_by_sample_size:
+    50: 0.01
+    100: 0.01
+    150: 0.02
+    200: 0.02
+    250: 0.02
+  privacy_epsilon_grid: [inf, 100, 50, 20, 10, 5, 2]
+  privacy_delta_grid: [0.5, 0.1, 0.05, 0.01, 0.005, 0.001]
+
+real_data:
+  dataset: ADHD-200
+  source: http://fcon_1000.projects.nitrc.org/indi/adhd200/
+  source_sites: [KKI, NYU, Peking_1, Peking_2, Peking_3]
+  clients: [KKI, Peking, NYU]
+  response: adhd_index
+  final_sample_size: 556
+  client_sample_sizes:
+    KKI: 80
+    Peking: 221
+    NYU: 255
+  wavelet: db4
+  wavelet_level: 3
+  tensor_shape: [12, 14, 12]
+  tucker_rank: [1, 1, 3, 1]
+  folds: 5
+  seed: 2026
+  T_g: 30
+  T_l: 200
+  max_iter_admm: 400
+  epsilon: 20.0
+  delta: 0.1
+  clipping_quantile: 1.0
+  selected_parameters:
+    eta_A: 0.003
+    omega_candidate: 0.01
+    lambda_admm: 0.05
+    omega_admm: 0.01
+    zeta_admm: 0.5
+    rho_admm: 1.0

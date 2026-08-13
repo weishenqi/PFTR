@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+outputs/
+data/raw/
+data/private/
+*.nii
+*.nii.gz
+*.npz
+*.xlsx
+!data/README.md
