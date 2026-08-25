@@ -1,9 +1,6 @@
 # Personalized Federated Tensor Regression
 
-This repository contains the core numerical implementation accompanying the
-paper. It includes the proposed private personalized federated estimator, the
-single-client and ADMM baselines, hyperparameter tuning, rank selection,
-simulation data generation, and ADHD-200 preprocessing and analysis functions.
+This repository contains the core numerical implementation accompanying the paper. It includes the proposed private personalized federated estimator, the single-client and ADMM baselines, rank selection, simulation data generation, and ADHD-200 preprocessing and analysis functions.
 
 Plotting code, one-off command-line wrappers, cached runs, and historical
 diagnostic scripts are intentionally excluded.
@@ -14,7 +11,6 @@ diagnostic scripts are intentionally excluded.
   and tensor-regression sampling.
 - `pftr.single_client`: one-stage ADMM initialization and local two-stage model.
 - `pftr.federated`: private Stage I and local FISTA personalization.
-- `pftr.tuning_federated`, `pftr.tuning_single`: common-fold CV functions.
 - `pftr.rank_selection`: ridge-type Tucker-rank selection.
 - `pftr.data.adhd200`: raw T1/phenotype matching and db4 tensor construction.
 - `pftr.experiments.simulation`: Figure 2 and Figure 3 numerical experiments.
@@ -34,8 +30,7 @@ Within each replication, all methods are evaluated on the same generated data to
 
 ## Reproducing the ADHD-200 analysis
 
-1. Obtain ADHD-200 T1 images and phenotypic tables from the source named in
-   `configs/paper.yaml`.
+1. Obtain ADHD-200 T1 images and phenotypic tables from the official ADHD-200 source.
 2. Build tensors with `build_adhd200_dataset` and export only through
    `build_public_workbook`.
 3. Load and select the paper cohort with `load_analysis_workbook` and
